@@ -1,0 +1,81 @@
+/* The app's own tokens, so the site and the product look like one thing.
+   The lime is a fill that carries dark ink — never text on a light ground,
+   where it runs at 1.21:1. Same rule as app/lib/ui/theme.dart. */
+:root {
+  --bg: #F5F6F2;
+  --sf: #FFFFFF;
+  --s2: #EBEEE5;
+  --bd: #E1E4DB;
+  --tp: #14170F;
+  --ts: #5C6355;
+  --tt: #6C7365;
+  --pr: #B8FF3C;
+  --ink: #14170F;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0E1108; --sf: #171B12; --s2: #20261A; --bd: #2E3626;
+    --tp: #F2F4EE; --ts: #A8B09C; --tt: #767E6B;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--tp);
+  font: 400 17px/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+        'Helvetica Neue', system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+
+h1, h2, h3, .brand {
+  font-family: Archivo, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+h1 { font-size: 2.25rem; margin: 0 0 .5rem; }
+h2 { font-size: 1.35rem; margin: 2.5rem 0 .5rem; }
+h3 { font-size: 1.05rem; margin: 1.75rem 0 .35rem; }
+p, li { color: var(--tp); }
+.lede { font-size: 1.15rem; color: var(--ts); margin: 0 0 2rem; }
+.muted { color: var(--tt); font-size: .9rem; }
+
+header.site {
+  display: flex; align-items: baseline; gap: .75rem;
+  padding: 1.25rem 0 2rem; flex-wrap: wrap;
+}
+.brand { font-size: 1.1rem; text-decoration: none; color: var(--tp); }
+nav a {
+  color: var(--ts); text-decoration: none; font-size: .95rem; margin-left: 1rem;
+}
+nav a:hover, a:hover { text-decoration: underline; }
+a { color: var(--tp); }
+
+.card {
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.card h3:first-child { margin-top: 0; }
+
+/* The one place the lime appears: a fill carrying dark ink. */
+.pill {
+  display: inline-block; background: var(--pr); color: var(--ink);
+  font-weight: 600; font-size: .8rem; letter-spacing: .04em;
+  padding: .35rem .75rem; border-radius: 999px; text-transform: uppercase;
+}
+
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--bd); vertical-align: top; }
+th { color: var(--ts); font-weight: 600; }
+
+footer.site {
+  margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--bd);
+  color: var(--tt); font-size: .9rem;
+}
+footer.site a { color: var(--tt); }

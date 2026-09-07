@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Support — Pickleball Log</title>
+<meta name="description" content="Help with Pickleball Log: detection, corrections, data and contact.">
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+  <a class="brand" href="index.html">Pickleball Log</a>
+  <nav>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+</header>
+<h1>Support</h1>
+<p class="lede">Most questions are about detection — when it fires, when it
+doesn't, and how to fix a session it got wrong.</p>
+
+<div class="card">
+  <h3 id="contact">Get in touch</h3>
+  <p>Email <a href="mailto:REPLACE-WITH-YOUR-SUPPORT-ADDRESS">REPLACE-WITH-YOUR-SUPPORT-ADDRESS</a>.
+  Tell me which iPhone and iOS version you are on, the court involved, and
+  roughly when it happened — that is usually enough to work out what the app
+  saw.</p>
+</div>
+
+<h2>Detection</h2>
+
+<h3>A session was not recorded</h3>
+<p>The usual causes, in the order they are worth checking:</p>
+<ul>
+  <li><strong>The app was force-quit.</strong> If you swipe Pickleball Log away in
+  the app switcher, iOS stops waking it for your courts — permanently and
+  silently, until you open it again. This is an iOS rule that no app can work
+  around. Leave Pickleball Log in the background rather than closing it.</li>
+  <li><strong>Location is not set to "Always".</strong> Without it, nothing is
+  noticed while the app is closed. Settings → Pickleball Log → Location.</li>
+  <li><strong>The court is not tracked</strong>, or its circle is too small for
+  where you actually park and play.</li>
+  <li><strong>You were not there long enough.</strong> A short visit is treated
+  as passing by rather than playing, so that driving past a court does not
+  invent a session.</li>
+</ul>
+<p>Open the app and it will catch up on anything it recorded while it was
+closed. If the session is genuinely missing, add it by hand — it counts exactly
+the same.</p>
+
+<h3>A session has the wrong times</h3>
+<p>Open it from History and correct them. Corrections are permanent: the app
+will not overwrite them later, and it shows what it originally thought so you
+can judge whether to trust it next time.</p>
+
+<h3>A session is still running after I left</h3>
+<p>It means the departure was never noticed. Open the app and end it from the
+card at the top of the home screen, or correct the end time afterwards. Arriving
+at another tracked court also closes it.</p>
+
+<h3>A session I never played</h3>
+<p>Delete it from History. Deleting is permanent and the app will not recreate
+it. Note that any court fee it recorded stays on your spending — you paid it
+either way — and you can delete that separately from the Money tab.</p>
+
+<h2>Battery</h2>
+<p>Pickleball Log uses geofencing rather than continuous GPS: iOS wakes the app when
+a boundary is crossed and the app is otherwise not running. In testing this has
+not produced a drain that stands out from ordinary phone use. If you see
+something different, please say so — it is the kind of report that is hard to
+get any other way.</p>
+
+<h2>Your data</h2>
+<h3>Getting it out</h3>
+<p>Profile → Export writes your sessions, expenses and equipment as CSV files
+and hands them to the iOS share sheet — AirDrop them to a Mac, save to Files, or
+email them to yourself. They are yours, in a format any spreadsheet opens.</p>
+<h3>Getting a new phone</h3>
+<p>Your Pickleball Log data is part of your normal iPhone backup, so restoring a
+backup to a new phone brings it with you. There is no account to sign into, and
+nothing to transfer manually.</p>
+<h3>Deleting it</h3>
+<p>Delete the app. Everything goes with it, because it was never anywhere
+else.</p>
+
+<h2>Privacy</h2>
+<p>Covered in full on the <a href="privacy.html">privacy page</a>. The short
+version: nothing is collected, and nothing is sent to us.</p>
+<footer class="site">
+  <p>Pickleball Log &middot; Play pickleball. It remembers the journey.<br>
+  <a href="privacy.html">Privacy</a> &middot;
+  <a href="support.html">Support</a> &middot;
+  <a href="terms.html">Terms</a><br>
+  <a href="https://ancientcitylabs.github.io/">Ancient City Labs</a></p>
+</footer>
+</div>
+</body>
+</html>
