@@ -136,14 +136,18 @@ p.center { max-width: 34rem; margin-left: auto; margin-right: auto; }
   font-size: 1.2rem;
 }
 
-/* The three-phone shot. Its ground is exactly --inv-bg, so the image needs no
-   panel behind it — it is its own panel. Regenerate with design/hero-olive.swift
-   if the source mockup changes; a pure-black ground would not sit with the
-   privacy panel below it. */
+/* The three-phone shot. The mockup's ground is flooded out to transparency by
+   design/hero-ground.swift in the app repository, so the phones sit directly on
+   the page and one asset serves both themes. The shadow is a drop-shadow rather
+   than a box-shadow because it has to follow the phone silhouettes, not the
+   rectangle of the image. */
 .hero-band { margin: 0 0 1rem; }
 .hero-band img {
   display: block; width: 100%; height: auto;
-  border-radius: 16px;
+  filter: drop-shadow(0 18px 26px rgba(20, 23, 15, .17));
+}
+@media (prefers-color-scheme: dark) {
+  .hero-band img { filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .6)); }
 }
 
 /* --- The App Store badge --------------------------------------------
