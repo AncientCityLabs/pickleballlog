@@ -45,13 +45,13 @@
          approves it. While data-live="no" the badge renders greyed out
          and unclickable, under a "coming soon" line.
 
-         WHEN APPLE APPROVES, two edits and no more:
-           1. data-live="no"  ->  data-live="yes"   (on the div below)
-           2. replace APPSTORE_ID in the href with the numeric Apple ID
-              from App Store Connect > App Information > Apple ID
+         WHEN APPLE APPROVES, one edit and no more:
+           data-live="no"  ->  data-live="yes"   (on the div below)
+         The Apple ID (6809836115) is already in the href below, so the
+         switch is the only edit: it is live the moment Apple approves.
          ================================================================= -->
     <div class="store" data-live="no">
-      <a class="badge" href="https://apps.apple.com/app/idAPPSTORE_ID">
+      <a class="badge" href="https://apps.apple.com/app/id6809836115">
         <picture>
           <source srcset="img/appstore-white.svg" media="(prefers-color-scheme: dark)">
           <img src="img/appstore-black.svg" alt="Download on the App Store" width="180" height="60">
