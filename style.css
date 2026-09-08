@@ -123,27 +123,35 @@ p.center { max-width: 34rem; margin-left: auto; margin-right: auto; }
   border-radius: 1.65rem;
 }
 .phone.sm { max-width: 14rem; }
-.hero-shot .phone { max-width: 17rem; }
 @media (prefers-color-scheme: dark) {
   .phone { box-shadow: 0 12px 32px rgba(0, 0, 0, .45); }
 }
 
 /* --- Hero ------------------------------------------------------------ */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 17rem;
-  gap: 3.5rem; align-items: center;
-  margin: 0 0 3rem;
-}
+.hero { text-align: center; margin: 1rem 0 2.5rem; }
 .hero > *, .feature > * { min-width: 0; }
-.hero h1 { font-size: 2.75rem; margin: .75rem 0 .75rem; }
-.hero .lede { margin-bottom: 1.75rem; }
+.hero h1 { font-size: 3rem; margin: .9rem 0 .9rem; }
+.hero .lede {
+  margin: 0 auto 1.75rem; max-width: 34rem;
+  font-size: 1.2rem;
+}
+
+/* The three-phone shot. Its ground is exactly --inv-bg, so the image needs no
+   panel behind it — it is its own panel. Regenerate with design/hero-olive.swift
+   if the source mockup changes; a pure-black ground would not sit with the
+   privacy panel below it. */
+.hero-band { margin: 0 0 1rem; }
+.hero-band img {
+  display: block; width: 100%; height: auto;
+  border-radius: 16px;
+}
 
 /* --- The App Store badge --------------------------------------------
    Apple's own artwork, unmodified, from their Media Services endpoint.
    It may not be recoloured or redrawn, so the "not yet" state greys the
    whole badge out rather than restyling it. */
-.store { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.store { display: flex; align-items: center; justify-content: center;
+         gap: 1rem; flex-wrap: wrap; }
 .badge { display: inline-block; line-height: 0; }
 .badge img { height: 3.25rem; width: auto; }
 .store-note { margin: 0; color: var(--tt); font-size: .9rem; }
@@ -217,15 +225,15 @@ p.center { max-width: 34rem; margin-left: auto; margin-right: auto; }
 
 /* --- Narrow screens --------------------------------------------------- */
 @media (max-width: 44rem) {
-  .hero, .feature, .tiers { grid-template-columns: 1fr; gap: 2rem; }
+  .feature, .tiers { grid-template-columns: 1fr; gap: 2rem; }
   .hero h1 { font-size: 2.1rem; }
+  .hero .lede { font-size: 1.05rem; }
   /* The headline's line break is a nicety on a wide screen and an overflow on
      a narrow one — "It remembers the journey." cannot fit on one line at 390px. */
   .hero h1 br { display: none; }
   .feature.reverse .feature-copy { order: 0; }
   .claim { padding: 2rem 1.25rem; }
   .claim h2 { font-size: 1.8rem; }
-  .store { justify-content: flex-start; }
   .phone.sm { max-width: 11rem; }
   .rule { margin: 3rem 0; }
 }
