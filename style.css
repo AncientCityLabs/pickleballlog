@@ -11,6 +11,13 @@
   --tt: #6C7365;
   --pr: #B8FF3C;
   --ink: #14170F;
+
+  /* Fixed, theme-independent. The inverted panel is always near-black olive,
+     because that is the only surface the lime may be used as ink on. */
+  --inv-bg: #14170F;
+  --inv-tp: #F2F4EE;
+  --inv-ts: #D6DACE;
+  --inv-tt: #8A9280;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -79,3 +86,146 @@ footer.site {
   color: var(--tt); font-size: .9rem;
 }
 footer.site a { color: var(--tt); }
+
+/* ===================================================================
+   Landing page. Everything above is shared with privacy/terms/support;
+   everything below is the marketing layout and is only used by index.
+   =================================================================== */
+
+/* The landing page runs wider than the prose pages, which keep the 44rem
+   measure set above — 60rem of legal text is a wall. */
+.wrap.home { max-width: 60rem; }
+.center { text-align: center; }
+p.center { max-width: 34rem; margin-left: auto; margin-right: auto; }
+
+.rule {
+  border: 0; border-top: 1px solid var(--bd);
+  margin: 4rem 0;
+}
+
+.brand { display: inline-flex; align-items: center; gap: .5rem; }
+.brand-icon { border-radius: 6px; vertical-align: middle; }
+
+/* --- The phone frame -------------------------------------------------
+   Drawn here rather than baked into the images, so the screenshots stay
+   the honest ones tool/screenshots.sh takes off a simulator. */
+.phone {
+  border: 1px solid var(--bd);
+  border-radius: 2rem;
+  padding: 6px;
+  background: var(--sf);
+  box-shadow: 0 12px 32px rgba(20, 23, 15, .10);
+  max-width: 20rem;
+  margin: 0 auto;
+}
+.phone img {
+  display: block; width: 100%; height: auto;
+  border-radius: 1.65rem;
+}
+.phone.sm { max-width: 14rem; }
+.hero-shot .phone { max-width: 17rem; }
+@media (prefers-color-scheme: dark) {
+  .phone { box-shadow: 0 12px 32px rgba(0, 0, 0, .45); }
+}
+
+/* --- Hero ------------------------------------------------------------ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 17rem;
+  gap: 3.5rem; align-items: center;
+  margin: 0 0 3rem;
+}
+.hero > *, .feature > * { min-width: 0; }
+.hero h1 { font-size: 2.75rem; margin: .75rem 0 .75rem; }
+.hero .lede { margin-bottom: 1.75rem; }
+
+/* --- The App Store badge --------------------------------------------
+   Apple's own artwork, unmodified, from their Media Services endpoint.
+   It may not be recoloured or redrawn, so the "not yet" state greys the
+   whole badge out rather than restyling it. */
+.store { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.badge { display: inline-block; line-height: 0; }
+.badge img { height: 3.25rem; width: auto; }
+.store-note { margin: 0; color: var(--tt); font-size: .9rem; }
+
+.store[data-live="no"] .badge {
+  pointer-events: none;
+  filter: grayscale(1);
+  opacity: .4;
+}
+.store[data-live="yes"] .store-note { display: none; }
+.store[data-live="yes"] .badge:hover { opacity: .8; }
+
+/* --- Alternating feature rows ---------------------------------------- */
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: center;
+  margin: 3rem 0;
+}
+.feature h2 { margin-top: 0; }
+.feature-shots { display: flex; gap: 1rem; justify-content: center; }
+.feature.reverse .feature-copy { order: 2; }
+
+/* --- The privacy claim ----------------------------------------------
+   The one panel that inverts. The lime is allowed as ink here and only
+   here, because near-black olive is the surface it passes contrast on. */
+.claim {
+  background: var(--inv-bg);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+.claim h2 {
+  color: var(--pr);
+  font-size: 2.25rem;
+  margin: .25rem 0 1rem;
+}
+.claim p { color: var(--inv-ts); max-width: 40rem; margin: 0 auto 1rem; }
+.claim-kicker {
+  text-transform: uppercase; letter-spacing: .08em;
+  font-size: .75rem; font-weight: 600;
+  color: var(--inv-tt) !important;
+}
+.claim-punch { font-weight: 600; color: var(--inv-tp) !important; }
+.claim .muted, .claim .muted a { color: var(--inv-tt) !important; }
+
+/* --- Tiers ------------------------------------------------------------ */
+.tiers {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin: 2rem 0 1.5rem;
+}
+.tier {
+  background: var(--sf); border: 1px solid var(--bd);
+  border-radius: 12px; padding: 1.5rem;
+}
+.tier.paid { border-color: var(--tp); }
+.tier h3 { margin-top: 0; }
+.tier-price { font-family: Archivo, system-ui, sans-serif; font-weight: 700;
+  font-size: 1.75rem; margin: .25rem 0 0; letter-spacing: -.02em; }
+.tier-price span { font-size: 1rem; font-weight: 600; color: var(--ts); }
+.tier-alt { margin: .1rem 0 0; color: var(--tt); font-size: .9rem; }
+.tier ul { margin: 1.25rem 0 0; padding-left: 1.1rem; }
+.tier li { margin-bottom: .4rem; }
+
+/* --- Gallery ---------------------------------------------------------- */
+.gallery {
+  display: flex; gap: 1.25rem; justify-content: center;
+  flex-wrap: wrap; margin: 2rem 0;
+}
+
+/* --- Narrow screens --------------------------------------------------- */
+@media (max-width: 44rem) {
+  .hero, .feature, .tiers { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: 2.1rem; }
+  /* The headline's line break is a nicety on a wide screen and an overflow on
+     a narrow one — "It remembers the journey." cannot fit on one line at 390px. */
+  .hero h1 br { display: none; }
+  .feature.reverse .feature-copy { order: 0; }
+  .claim { padding: 2rem 1.25rem; }
+  .claim h2 { font-size: 1.8rem; }
+  .store { justify-content: flex-start; }
+  .phone.sm { max-width: 11rem; }
+  .rule { margin: 3rem 0; }
+}

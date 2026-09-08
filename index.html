@@ -7,59 +7,185 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/icon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
 <title>Pickleball Log — your pickleball history, kept for you</title>
-<meta name="description" content="Pickleball Log records your pickleball sessions automatically and turns them into a personal history: sessions, hours, courts, spending, equipment, memories.">
+<meta name="description" content="Pickleball Log records your pickleball sessions automatically and turns them into a personal history: sessions, hours, courts, spending, equipment, memories. Everything stays on your iPhone.">
+<meta property="og:title" content="Pickleball Log">
+<meta property="og:description" content="Arrive at your court and a session starts. Leave and it ends. Your hours, your courts and what it all costs — kept on your iPhone, and nowhere else.">
+<meta property="og:image" content="https://ancientcitylabs.app/pickleballlog/img/icon.png">
+<meta property="og:url" content="https://ancientcitylabs.app/pickleballlog/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
 </head>
 <body>
-<div class="wrap">
+<div class="wrap home">
 <header class="site">
-  <a class="brand" href="index.html">Pickleball Log</a>
+  <a class="brand" href="index.html">
+    <img src="img/icon.png" alt="" class="brand-icon" width="28" height="28">
+    Pickleball Log
+  </a>
   <nav>
     <a href="privacy.html">Privacy</a>
     <a href="support.html">Support</a>
     <a href="terms.html">Terms</a>
   </nav>
 </header>
-<span class="pill">iPhone</span>
-<h1>Play pickleball.<br>It remembers the journey.</h1>
-<p class="lede">Pickleball Log notices when you arrive at your courts and when you
-leave, and turns a season of playing into something you can actually look
-back on — sessions, hours, courts, what it cost, what you played with, and who
-you played with.</p>
 
-<div class="card">
-  <h3>It runs by itself</h3>
-  <p>Pick the courts you play at. Pickleball Log starts and ends your sessions when
-  you arrive and leave. There is no timer to remember and nothing to tap when
-  you would rather be warming up. When it misses one — and it sometimes will —
-  you can start, correct or add a session by hand.</p>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="pill">iPhone</span>
+    <h1>Play pickleball. <br>It remembers the journey.</h1>
+    <p class="lede">Tell it where you play. After that it notices when you arrive
+    at the court and when you leave, and writes the session down — while your
+    phone is in your bag and the app is closed.</p>
+
+    <!-- ================= LAUNCH SWITCH =================================
+         The app is in review, so its App Store URL 404s until Apple
+         approves it. While data-live="no" the badge renders greyed out
+         and unclickable, under a "coming soon" line.
+
+         WHEN APPLE APPROVES, two edits and no more:
+           1. data-live="no"  ->  data-live="yes"   (on the div below)
+           2. replace APPSTORE_ID in the href with the numeric Apple ID
+              from App Store Connect > App Information > Apple ID
+         ================================================================= -->
+    <div class="store" data-live="no">
+      <a class="badge" href="https://apps.apple.com/app/idAPPSTORE_ID">
+        <picture>
+          <source srcset="img/appstore-white.svg" media="(prefers-color-scheme: dark)">
+          <img src="img/appstore-black.svg" alt="Download on the App Store" width="180" height="60">
+        </picture>
+      </a>
+      <p class="store-note">In review with Apple. Nearly there.</p>
+    </div>
+  </div>
+
+  <div class="hero-shot">
+    <div class="phone">
+      <img src="img/01-home.png" alt="The Pickleball Log home screen, showing this week's sessions and hours."
+           width="640" height="1391">
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section class="feature">
+  <div class="feature-copy">
+    <h2>It runs by itself</h2>
+    <p>Pick the courts you play at and draw a circle round them. That is the
+    whole setup. From then on a session starts when you arrive and ends when you
+    leave — no timer to remember, and nothing to tap when you would rather be
+    warming up.</p>
+    <p>When it misses one, and occasionally it will, you can start, correct or
+    add a session by hand. It counts exactly the same.</p>
+  </div>
+  <div class="feature-shots">
+    <div class="phone sm">
+      <img src="img/09-court-map.png" alt="Setting a court: a map with a circle drawn around the courts and the car park."
+           width="640" height="1391" loading="lazy">
+    </div>
+    <div class="phone sm">
+      <img src="img/10-notice-arrival.png" alt="A notification on the lock screen saying a session has started."
+           width="640" height="1391" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="claim">
+  <p class="claim-kicker">App Store privacy label</p>
+  <h2>Data Not Collected</h2>
+  <p>There is no account and no sign-up. There is no Pickleball Log server,
+  because there is nothing to send anywhere. No analytics, no advertising, no
+  tracking — your history is a file on your iPhone, backed up the way the rest
+  of your phone is, and exportable whenever you like, photos included.</p>
+  <p class="claim-punch">That is not a promise about how we handle your data.
+  It is that we never receive it.</p>
+  <p class="muted"><a href="privacy.html">The privacy policy</a> has the full
+  detail, including the two places the app talks to Apple.</p>
+</section>
+
+<hr class="rule">
+
+<section class="feature reverse">
+  <div class="feature-copy">
+    <h2>The part worth paying for is the arithmetic</h2>
+    <p>Recording is free. What costs money is the layer on top: what an hour on
+    court actually costs you, whether your membership is paying for itself
+    measured against the drop-in fees you really paid, what your paddle has cost
+    per hour of play, who you have played with most, and how a season compares
+    with the one before.</p>
+  </div>
+  <div class="feature-shots">
+    <div class="phone sm">
+      <img src="img/03-money.png" alt="The Money tab, showing cost per hour and a membership verdict."
+           width="640" height="1391" loading="lazy">
+    </div>
+    <div class="phone sm">
+      <img src="img/08-year.png" alt="Your Pickleball Year, a single page summarising the season."
+           width="640" height="1391" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<h2 class="center">Free, and paid</h2>
+<div class="tiers">
+  <div class="tier">
+    <h3>Free</h3>
+    <p class="tier-price">Always</p>
+    <ul>
+      <li>Automatic detection at every court</li>
+      <li>Manual entry and correction</li>
+      <li>The complete history, search and calendar</li>
+      <li>Scores, notes, photos and people</li>
+      <li>Expenses and equipment</li>
+      <li>The last 90 days, worked out</li>
+      <li>A complete export, photos included</li>
+    </ul>
+  </div>
+  <div class="tier paid">
+    <h3>Pickleball Log Pro</h3>
+    <p class="tier-price">$24.99<span>/year</span></p>
+    <p class="tier-alt">or $4.99 monthly</p>
+    <ul>
+      <li>All-time statistics, not just 90 days</li>
+      <li>Your pickleball year, as one page</li>
+      <li>Cost per hour, per session, per paddle</li>
+      <li>The membership verdict, over any period</li>
+      <li>When you play, and who you play with most</li>
+      <li>Season against season</li>
+    </ul>
+  </div>
+</div>
+<p class="center muted">We will never charge you to write your own history
+down. If you stop paying, everything you recorded is still yours and still
+exportable.</p>
+
+<hr class="rule">
+
+<h2 class="center">A look at it</h2>
+<div class="gallery">
+  <div class="phone sm"><img src="img/02-statistics.png" alt="The statistics screen." width="640" height="1391" loading="lazy"></div>
+  <div class="phone sm"><img src="img/04-history.png" alt="History, as a searchable list of sessions." width="640" height="1391" loading="lazy"></div>
+  <div class="phone sm"><img src="img/12-widget.png" alt="The home screen widget showing this week's hours." width="640" height="1391" loading="lazy"></div>
 </div>
 
 <div class="card">
-  <h3>It stays on your iPhone</h3>
-  <p>There is no Pickleball Log account, because there is no Pickleball Log server. Your
-  sessions, photos, notes, spending and the people you played with are stored on
-  your device and backed up with your normal iPhone backup. We cannot read them,
-  because they are never sent to us.</p>
-  <p class="muted">The full detail is on the <a href="privacy.html">privacy
-  page</a>, including the two places the app does talk to Apple.</p>
+  <h3>Before you buy</h3>
+  <p>Pickleball Log needs <strong>Always</strong> location access to notice
+  sessions while it is closed — that is the whole idea, and it is why the app can
+  log a session you never opened it for. It only ever looks at the courts you
+  add. It has no interest in anywhere else you go, and nothing it sees leaves the
+  phone.</p>
+  <p>Battery cost is small: this uses the same geofencing iOS already runs for
+  reminders, not continuous GPS.</p>
+  <p class="muted">iPhone only. There is a home screen widget, and it can tell
+  you what it recorded when you leave a court.</p>
 </div>
 
-<div class="card">
-  <h3>The part worth paying for is the arithmetic</h3>
-  <p>Recording sessions is free and always will be. What costs money is the
-  layer on top: what an hour of pickleball actually costs you, whether your
-  membership is paying for itself, what your paddle has cost per hour of play,
-  who you have played with most, and how a season compares with the one
-  before.</p>
-</div>
-
-<h2>Not on the App Store yet</h2>
-<p>Pickleball Log is being built and tested on real courts. This page exists so that
-the privacy policy, support and terms are where they should be before anything
-ships.</p>
 <footer class="site">
-  <p>Pickleball Log &middot; Play pickleball. It remembers the journey.<br>
+  <p><strong>Pickleball Log</strong> &middot; Play pickleball. It remembers the journey.<br>
   <a href="privacy.html">Privacy</a> &middot;
   <a href="support.html">Support</a> &middot;
   <a href="terms.html">Terms</a><br>
